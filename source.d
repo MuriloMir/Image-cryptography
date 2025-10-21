@@ -1,10 +1,10 @@
 // This software lets you encrypt/decrypt an image by left-clicking on the screen and save it after right-clicking on the screen.
 
 // import the tools we need
-import arsd.image : loadImageFromFile;
-import arsd.png : writePng;
-import arsd.simpleaudio : AudioOutputThread;
-import arsd.simpledisplay : Color, Image, MouseButton, MouseEvent, MouseEventType, Point, SimpleWindow;
+import multimedia.audio : AudioOutputThread;
+import multimedia.display : Color, Image, MouseButton, MouseEvent, MouseEventType, Point, SimpleWindow;
+import multimedia.image : loadImageFromFile, memory;
+import multimedia.png : writePng;
 import std.conv : to;
 import std.math : ceil;
 import std.random : uniform;
@@ -75,9 +75,6 @@ Image encrypt(Image img, ubyte[] key)
     // return the new image
     return img;
 }
-
-// this will be the data type of the sound files imported into the program
-alias memory = immutable ubyte[];
 
 // start the program
 void main()
